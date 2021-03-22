@@ -14,14 +14,14 @@ export default class WelcomeScreen extends React.Component{
     userLogin = (emailID, password)=>{
         firebase.auth().signInWithEmailAndPassword(emailID, password).then(()=>{return Alert.alert('Successfully Logged in')}).catch((error)=>{
             var errorMessage = error.message;
-            console.log(errorMessage);
+            Alert.alert(errorMessage);
         })
     };
 
     userSignUp = (emailID, password)=>{
         firebase.auth().createUserWithEmailAndPassword(emailID, password).then(()=>{return Alert.alert('Successfully Signed up')}).catch((error)=>{
             var errorMessage = error.message;
-            console.log(errorMessage);
+           Alert.alert(errorMessage);
         })
     }
     render(){
@@ -30,7 +30,7 @@ export default class WelcomeScreen extends React.Component{
 
                 <View style = {styles.profileContainer}>
                 <Image source={require("../assets/BookSanta.png")} style={{marginTop : 25, width : 150, height : 200}}></Image>
-                <Text style={styles.title}>Book Santa</Text>
+                <Text style={styles.title}>Barter App</Text>
                 </View>
 
                 <View style = {styles.buttonContainer}>
